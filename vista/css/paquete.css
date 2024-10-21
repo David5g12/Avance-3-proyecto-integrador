@@ -1,0 +1,208 @@
+*{
+    padding: 0;
+    margin: 0 ;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(10, 122, 4);
+}
+header{
+    background-image: url(../img/fPaquetes.png);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding-top: 1%;
+    
+}
+nav{
+    margin-top: 20px; 
+    background-color:rgb(3, 79, 94) ; 
+    padding-left: 1%;
+    padding-right: 1%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    
+    border-radius: 10px 10px 10px 10px;
+    background-repeat: no-repeat;
+    width: 8%;
+    height: 10vh;
+
+}
+.subnav{
+    background-color: rgb(97, 156, 168);
+    border-radius: 50px 50px 50px 50px;
+    height: 8vh;
+    width: 100%;
+    padding-top: 9px;  
+}
+.nav-link{
+    color: white;
+    font-size: 120%;
+    
+}
+
+.center-container{
+    display: flex;
+    justify-content: left;
+    height: 100%;
+    background-color: white;
+    justify-content:center;  
+}
+    
+.Vaije{
+    justify-content:center;
+    width: 80%;
+    height: 80vh;
+    color: rgb(10, 122, 4);
+    text-align: center;
+    margin-top: 2%;
+}
+
+#beneficios{
+    display:flex;
+    background-color: white;
+    display:flex;
+    justify-content:center; 
+    align-items:center; 
+
+}
+.row{
+    padding-left: 2%;
+    background-color: white;
+    width: 90%;
+    margin-top: 13%;
+    margin-left: 2%;
+    margin-bottom: 10%;
+    
+}
+#ahora{
+    background-image: url(../img/dbanenergmail.png);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display:flex;
+    justify-content:center; 
+    align-items:center; 
+}
+.comienza{
+    background-color: white;
+    width: 50%;
+    height: 50vh;
+    border-radius: 20px 20px 20px 20px;
+    text-align: center;
+}
+#unete{
+    background-image: url(../img/fpaquetes.png);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display:flex; 
+}
+.comunidad{
+    padding-top: 10%;
+    padding-left: 2%;
+    background-color: white;
+    margin-top: 7%;
+    width: 50%;
+    height: 65vh;
+}
+.planes{
+    background-color: #E6FFF5;
+    margin-top: 7%;
+    width: 50%;
+    height: 65vh;
+    border-radius: 20px 20px 20px 20px;  
+}
+.planificacion{
+    padding-left: 5%;
+    padding-top: 5%;
+
+}
+.locales{
+    padding-left: 5%;
+    padding-top: 5%;
+}
+.seguridad{
+    padding-left: 5%;
+    padding-top: 5%;
+}
+
+footer{
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: relative;
+    padding-top:5%;
+    background-color:  rgb(3, 79, 94);
+    color: white;
+    
+    
+    
+}
+.foter{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color:  rgb(3, 79, 94);
+    
+}
+.row.g-0{
+    background-color:   rgb(3, 79, 94);
+    margin-top: 1%;
+    margin-bottom: 1%;
+    
+}
+.cardmagico{
+    margin-left: 40%;
+    background-color:  rgb(3, 79, 94);
+    color: white;
+    width: 80%;
+    
+    
+
+}
+
+.card1{
+    background-color: rgb(3, 79, 94);
+    width: 50%;
+    margin-left: 40%;
+    
+}
+.card2{
+    background-color: rgb(3, 79, 94);
+    width: 50%;
+    margin-left:20% ;
+
+}
+.card3{
+    background-color: rgb(3, 79, 94);
+    width: 60%;
+    
+}
+.card5{
+    background-color:rgb(3, 79, 94);
+    width: 55%;
+    margin-left: 40%;
+}
+.card-body a{
+    color: white;
+    text-decoration: none;
+}
+

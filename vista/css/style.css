@@ -1,0 +1,205 @@
+*{
+    padding: 0;
+    margin: 0 ;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+header{
+    background-image: url(../img/banner.png);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding-top: 1%;
+    
+}
+nav{
+    margin-top: 20px; 
+    background-color:rgb(3, 79, 94) ; 
+    padding-left: 1%;
+    padding-right: 1%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    
+    border-radius: 10px 10px 10px 10px;
+    background-repeat: no-repeat;
+    width: 8%;
+    height: 10vh;
+
+}
+.subnav{
+    background-color: rgb(97, 156, 168);
+    border-radius: 50px 50px 50px 50px;
+    height: 8vh;
+    width: 100%;
+    padding-top: 9px;  
+}
+.nav-link{
+    color: white;
+    font-size: 120%;
+    
+}
+.center-container{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+    
+    
+    
+}
+    
+.Vaije{
+    width: 80%;
+    text-align: center;
+    color: white;
+    height: 40%;  
+}
+
+.Unete{
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+    margin-left:42% ;
+    width: 18%;
+    margin-top: 3%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    
+}
+/*article*/
+.mision{
+    display: flex;
+    height: 80vh;
+    padding: 20px;
+    background-color: rgb(214, 223, 196);
+    
+    
+}
+.conecta{
+    width: 90%;
+    margin-left: 5%;
+    background-color: rgb(214, 223, 196);
+    margin-top: 10%;
+    text-align: left;
+    height: 300px;
+}
+#beneficios{
+    display: flex;
+    height: 70vh;
+    padding: 20px;
+    background-color: rgb(3, 79, 94);
+}
+.bviaje{
+    color: white;
+    background-color:rgb(3, 79, 94);
+    margin-top: 5%;
+}
+.row{
+    position: relative;
+    align-items: self-start;
+    background-color:rgb(3, 79, 94);
+    margin-left: 2%;
+}
+.card{
+    background-color: rgb(7, 62, 73);
+    height: 160%;
+    color: white;
+    border-radius: 20px 20px 20px 20px;
+}
+#viajar{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgb(3, 79, 94) ;
+}
+.card_opinion{
+    color: white;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+
+}
+#form{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgb(3, 79, 94) ;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    
+}
+.formulario{
+    background-color: rgb(3, 79, 94) ;
+    color: white;
+    text-align: center;
+    width: 50%;
+}
+footer{
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: relative;
+    padding-top:5%;
+    background-color:  rgb(3, 79, 94);
+    color: white; 
+}
+.foter{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color:  rgb(3, 79, 94);
+    
+}
+.row.g-0{
+    background-color:   rgb(3, 79, 94);
+    margin-top: 1%;
+    margin-bottom: 1%;
+    
+}
+.cardmagico{
+    margin-left: 40%;
+    background-color:  rgb(3, 79, 94);
+    color: white;
+    width: 80%;
+    
+    
+
+}
+
+.card1{
+    background-color: rgb(3, 79, 94);
+    width: 50%;
+    margin-left: 40%;
+    
+}
+.card2{
+    background-color: rgb(3, 79, 94);
+    width: 50%;
+    margin-left:20% ;
+
+}
+.card3{
+    background-color: rgb(3, 79, 94);
+    width: 60%;
+    
+}
+.card5{
+    background-color:rgb(26, 159, 182);
+    width: 55%;
+    margin-left: 40%;
+}
+.card-body a{
+    color: white;
+    text-decoration: none;
+}
+
+
