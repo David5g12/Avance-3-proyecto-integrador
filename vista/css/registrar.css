@@ -1,0 +1,84 @@
+
+
+html, body {
+  width: 100%; /* El cuerpo de la página ocupa el ancho total */
+  height: 100%; /* El cuerpo de la página ocupa la altura total */
+  font-family: 'Open Sans', sans-serif; /* Fuente principal de la página */
+  background: radial-gradient(ellipse at 0% 100%, rgba(104, 128, 138, 0.4) 10%, rgba(138, 114, 76, 0) 40%),
+              linear-gradient(to bottom, rgba(57, 173, 219, 0.25) 0%, rgba(42, 60, 87, 0.4) 100%),
+              linear-gradient(135deg, #670d10 0%, #092756 100%); /* Fondo compuesto por varios degradados */
+  overflow: hidden; /* Elimina las barras de desplazamiento */
+}
+.login {
+  position:absolute; /* Posición absoluta respecto a la página */
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta la posición para estar exactamente en el centro */
+  width: 350px; /* Ancho fijo del formulario */
+  height: 60%; /* Alto fijo del formulario */
+  
+
+}
+  
+
+.login h1 {
+  color: #fff; /* Color de texto blanco */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra de texto para que resalte sobre el fondo */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  text-align: center; /* Centra el texto */
+}
+input {
+  width: 100%; /* Ancho completo del campo */
+  margin-bottom: 10px; /* Espacio inferior entre los campos */
+  background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente oscuro */
+  border: 1px solid rgba(0, 0, 0, 0.3); /* Borde semitransparente oscuro */
+  padding: 10px; /* Relleno interno del campo */
+  font-size: 120%; /* Tamaño de fuente */
+  color: #fff; /* Texto en blanco */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); /* Sombra ligera en el texto */
+  border-radius: 4px; /* Bordes redondeados */
+  box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2), 
+              0 1px 1px rgba(255, 255, 255, 0.2); /* Sombra interna y externa */
+  transition: box-shadow 0.5s ease; /* Transición suave para los cambios de sombra */
+}
+input:focus {
+  box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.4), 
+  0 1px 1px rgba(255, 255, 255, 0.2); /* Sombra más pronunciada */
+
+  
+}
+button{
+  width: 108%;
+  height: 5vh;
+  border-radius: 10px 10px 10px 10px;
+  margin-bottom: 5px;
+  background-color: rgb(22, 187, 129);
+  margin-top: 5px;
+
+}
+.btn {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-top: 1000px;
+}
+
+.btn1{
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-top: 1000px;
+}
+
+
+.rol{
+  width: 106%;
+  height: 50px;
+  margin-bottom: 10px;
+}

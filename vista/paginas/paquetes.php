@@ -1,11 +1,130 @@
 
 <?php
-require_once("../layout/headerp.php");
+require_once("vista/layout/headerp.php");
 ?>
+<?php
+$permisos = []; // Array para almacenar los permisos obtenidos
+
+// Supongamos que $datos es un arreglo con los permisos del usuario
+foreach ($datosPermiso as $key => $value) {
+    foreach ($value as $valor) {
+        // Guardar los datos en el arreglo $permisos
+        $permisos[] = [
+            'id_permiso' => $valor['id_permiso'],
+            'id_rol' => $valor['id_rol'],
+            'menu' => $valor['nombre_menu'],
+        ];
+    }
+}
+
+// Crear un arreglo de los nombres de los menús que el usuario tiene permiso para ver
+$menusPermitidos = [];
+foreach ($permisos as $permiso) {
+    $menusPermitidos[] = $permiso['menu'];
+}
+
+?>
+
+<header>
+
+<nav>
+    <img src="vista/img/logo.png" class="logo">
+    <div class="subnav">
+
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+            <a class="nav-link active" href="index.php">Inicio</a>
+            </li>
+            <?php if (in_array("Usuarios", $menusPermitidos)) : ?>
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.php?p=usuario">Usuarios</a>
+                </li>
+            <?php endif; ?>
+            <?php if (in_array("Destinos", $menusPermitidos)) : ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?p=destinos">Destinos</a>
+                </li>
+            <?php endif; ?>
+            <?php if (in_array("Paquetes", $menusPermitidos)) : ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?p=paquetes">Paquetes</a>
+                </li>
+            <?php endif; ?>
+            <?php if (in_array("Contacto", $menusPermitidos)) : ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?p=contacto">Contacto</a>
+                </li>
+            <?php endif; ?>
+
+            <?php if (in_array("Ver mi reserva", $menusPermitidos)) : ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?p=verMireserva">Ver mi reserva</a>
+                </li>
+            <?php endif; ?>
+            
+            <?php if (in_array("Más Opciones", $menusPermitidos)) : ?>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="masOpciones" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Más Opciones
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="masOpciones">
+                        <?php if (in_array("Registrar Paquetes", $menusPermitidos)) : ?>
+                            <li>
+                                <a class="dropdown-item" href="index.php?p=detallePaquete">Registrar Paquetes</a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if (in_array("Reservas", $menusPermitidos)) : ?>
+                            <li>
+                                <a class="dropdown-item" href="index.php?p=detalleReserva">Reservas</a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if (in_array("Permisos", $menusPermitidos)) : ?>
+                        <li>
+                            <a class="dropdown-item" href="index.php?p=permisos">Permisos</a>
+                        </li>
+                        <?php endif; ?>
+                    </ul>
+                </li>
+            <?php endif; ?>
+
+            
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?p=login">Iniciar sesión</a>
+            </li>
+            
+
+            
+
+            
+        </ul>
+    </div>
+</nav>
+
+
+<?php
+$paquetes = []; // Array para almacenar los datos obtenidos
+
+foreach ($datos as $key => $value) {
+    foreach ($value as $valor) {
+        // Guardar los datos en el arreglo $paquetes
+        $paquetes[] = [
+            'id_paquete' => $valor['id_paquete'],
+            'nombre' => $valor['nombre_paquete'],
+            'descripcion' => $valor['descripcion'],
+            'precio' => $valor['precio'],
+            'duracion' => $valor['duracion'],
+            'id_destino' => $valor['id_destino'],
+            'imagen' => $valor['imagen'] // No es necesario construir la ruta aquí si solo quieres los valores
+        ];
+    }
+}
+
+?>
+
 
 <div class="center-container">
     <div class="Vaije" style="background-color: white;">
-        <img src="../img/pbanner.png" style="width: 40%; border-radius: 200px 200px 200px 200px;">
+        <img src="vista/img/pbanner.png" style="width: 40%; border-radius: 200px 200px 200px 200px;">
         <h1 style="font-size: 300%;"><b>¡2x1, Desayunos</b></h1>
         <p style="font-size: 100%;">Ven y diviértete.</p> 
     </div>
@@ -19,46 +138,23 @@ require_once("../layout/headerp.php");
                 <h1 style="font-size: 350%;text-align: center;"><b>Ofertas.</b></h1>
                 <p style="font-size: 100%;text-align: center;">Pasos simples para embarcarte en tu próxima aventura.</p>
             </div>
+
+            <?php foreach ($paquetes as $paquete): ?>
+        
             <div class="col-sm-3">
                 <div class="card">
-                    <img class="card-img-top" src="../img/paquete1.jpeg" alt="Card image cap">
+                    <img class="card-img-top" src="vista/img/<?php echo $paquete['imagen']; ?>" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Chiapas Total</h5>
-                        <p class="card-text">2x1-Desayunos Gratis-7 Noches Desde: $10,000.00</p>
-                        <a href="#" class="btn btn-primary">Compra ahora</a>
+                        <h5 class="card-title"><?php echo $paquete['nombre']; ?></h5>
+                        <p class="card-text"><?php echo $paquete['descripcion']; ?> <?php echo $paquete['duracion']; ?>
+                        MXN$<?php echo $paquete['precio']; ?>
+                        </p>
+                        <a class="btn btn-primary" href="index.php?p=confirmarReserva&id_paquete=<?php echo $paquete['id_paquete']; ?>">Comprar paquete</a>
+
                     </div>
                 </div>
             </div> 
-            <div class="col-sm-3">
-                <div class="card">
-                    <img class="card-img-top" src="../img/paquete2.jpeg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Solo pueblo magíco</h5>
-                        <p class="card-text">2x1-Desayunos Gratis- 5 Noches Desde: $4,000.00</p>
-                        <a href="#" class="btn btn-primary">Compra ahora</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <img class="card-img-top" src="../img/paquete3.jpeg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Chiapas-Naturaleza</h5>
-                        <p class="card-text"> Milenaria 2x1- 4 Noches Desde: $3,100.00</p>
-                        <a href="#" class="btn btn-primary">Comprar ahora</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <img class="card-img-top" src="../img/paquete4.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Chiapas Express</h5>
-                        <p class="card-text">2x1-Desayunos Gratis- 5 Noches Desde: $4,000.00</p>
-                        <a href="#" class="btn btn-primary">Comprar ahora</a>
-                    </div>
-                </div>
-            </div>
+           <?php endforeach; ?>
         </div>
     </div>
     <div id="ahora">
@@ -112,5 +208,5 @@ require_once("../layout/headerp.php");
     </div>
 </article>
 
-<?php require_once("../layout/footer.php");
+<?php require_once("vista/layout/footer.php");
 ?>

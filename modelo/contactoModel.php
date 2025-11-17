@@ -1,5 +1,5 @@
 <?php
-class IndexModel{
+class contactoModel{
 
     private $permiso;
 
@@ -18,7 +18,6 @@ class IndexModel{
         }
         return $this->permiso;
     }
-
-
+    
 }
 ?>

@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0 ;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(10, 122, 4);
+    
+}
+header{
+    background-image: url(../img/fPaquetes.png);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding-top: 1%;
+    
+}
+nav{
+    margin-top: 20px; 
+    background-color:rgb(3, 79, 94) ; 
+    padding-left: 1%;
+    padding-right: 1%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    
+    border-radius: 10px 10px 10px 10px;
+    background-repeat: no-repeat;
+    width: 8%;
+    height: 10vh;
+
+}
+.subnav{
+    background-color: rgb(97, 156, 168);
+    border-radius: 50px 50px 50px 50px;
+    height: 8vh;
+    width: 100%;
+    padding-top: 9px;  
+}
+.nav-link{
+    color: white;
+    font-size: 120%;
+    
+}
+
+.table{
+    margin-left: 1%;
+    font-size: 110%;
+    margin-right: 1%;
+    margin-top: 1%;
+    
+}
+.table th{
+    background-color: cadetblue;
+}
+.table, .table th, .table td {
+    border: 1px solid black; /* Borde para las celdas */
+    border-collapse: collapse; /* Para que los bordes no se dupliquen */
+    text-align: center; /* Centra el contenido de la celda */
+    vertical-align: middle; /* Centra el contenido verticalmente */
+    white-space: nowrap; 
+    
+}
+a{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.editar {
+    background-color: #007bff;
+    padding: 5px 5px;
+    
+
+}
+.delete{
+    background-color: red;
+    padding: 5px 5px;
+}
+td.editar{
+    width: 90%;
+
+}
+.contenedor{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.agregar{
+    display: flex;
+    align-items: center; 
+    
+}
+.btn{
+    margin-left: 3%;
+    font-size: 110%;
+}
+h1{
+    margin-left: 1%;
+}
+td img{
+    width: 100%; /* La imagen ocupará el 50% del ancho de la celda (ajústalo si es necesario) */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
+    margin: 0; /* Elimina el margen alrededor de la imagen */
+    padding: 0; /* Elimina cualquier relleno alrededor de la imagen */
+    display: block; /* Elimina el pequeño espacio debajo de la imagen */
+    margin-left: auto; /* Centra la imagen horizontalmente */
+    margin-right: auto; /* Centra la imagen horizontalmente */
+    max-width: 150px; /* Tamaño máximo que deseas para la imagen */
+    max-height: 150px; /* Tamaño máximo de altura que deseas */
+
+
+}

@@ -5,6 +5,7 @@
 body{
     font-family: 'Times New Roman', Times, serif;
     color: rgb(10, 122, 4);
+    background-color:  rgb(3, 79, 94);
 }
 header{
     background-image: url(../img/fPaquetes.png);
@@ -115,6 +116,7 @@ nav{
     background-size: cover;
     position: relative;
     display:flex; 
+    
 }
 .comunidad{
     padding-top: 10%;
@@ -205,4 +207,5 @@ footer{
     color: white;
     text-decoration: none;
 }
+
 

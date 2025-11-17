@@ -1,12 +1,9 @@
 
 <?php
-require_once('vista/layout/headerd.php');
-?>
-<?php
 $permisos = []; // Array para almacenar los permisos obtenidos
 
 // Supongamos que $datos es un arreglo con los permisos del usuario
-foreach ($datos as $key => $value) {
+foreach ($datosPermiso as $key => $value) {
     foreach ($value as $valor) {
         // Guardar los datos en el arreglo $permisos
         $permisos[] = [
@@ -24,7 +21,6 @@ foreach ($permisos as $permiso) {
 }
 
 ?>
-
 <header>
 
 <nav>
@@ -61,7 +57,7 @@ foreach ($permisos as $permiso) {
                     <a class="nav-link" href="index.php?p=verMireserva">Ver mi reserva</a>
                 </li>
             <?php endif; ?>
-
+            
             <?php if (in_array("Más Opciones", $menusPermitidos)) : ?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="masOpciones" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -87,8 +83,6 @@ foreach ($permisos as $permiso) {
                 </li>
             <?php endif; ?>
 
-
-            
             <li class="nav-item">
                 <a class="nav-link" href="index.php?p=login">Iniciar sesión</a>
             </li>
@@ -102,92 +96,69 @@ foreach ($permisos as $permiso) {
 </nav>
 
 <?php
-$destinos = []; // Array para almacenar los datos obtenidos
+require_once('vista/layout/headerClientes.php');
+?>
 
-foreach ($datosdestino as $key => $value) {
-    foreach ($value as $valor) {
-        // Guardar los datos en el arreglo $paquetes
-        $destinos[] = [
-            'id_destino' => $valor['id_destino'],
-            'nombre' => $valor['nombre_destino'],
-            'ubicacion' => $valor['ubicacion'],
-            'popularidad' => $valor['popularidad'],
-            'descripcion' => $valor['descripcion'],
-            'tipo' => $valor['tipo_destino'],
-            'imagen' => $valor['imagen'] // No es necesario construir la ruta aquí si solo quieres los valores
-        ];
-    }
-}
-
-?> 
-
-
-
-
-<div class="center-container">
-    
-    <div class="Vaije" style="background-color: white;">
-        <h1 style="font-size: 300%;"><b>ESTO ES CHIAPAS</b></h1>
-        <p style="font-size: 100%;">Rico de biodiversidad.</p> 
-    </div>
-    <div class="rosa">
-     <img src="vista/img/destino1.png" style="width: 50%; border-radius: 200px 200px 200px 200px;">
-
-    </div>
+<br>
+<div class="contenedor">
+    <h1 style="text-align: center;">Tús reservas</h1>
+    <h5 style="text-align: center;">Por favor espere su confirmación</h5>
+    <hr  style="border: 2px solid;">
 </div>
-
-</header>
-
 <article>
-    <div id="beneficios">
-        <div class="row">
-            <div class="bviaje">
-                <h1 style="font-size: 350%;"><b>Las ciudades más populares de Chiapas.</b></h1>
-                <p style="font-size: 150%;"> Elige alguno de nuestros destinos.</p>
-            </div>
-            <?php foreach ($destinos as $destino): ?>
-                <div class="col-sm-3">
+
+    <div class="targetas">
+        <?php
+        $contador = 0;
+        foreach ($datosCliente as $key => $value) {
+            foreach ($value as $valor) {
+                if ($contador % 4 == 0) {
+                    // Abrir una nueva fila cada 4 tarjetas
+                    if ($contador > 0) echo '</div>'; // Cerrar la fila previa
+                    echo '<div class="row">';
+                }
+                ?>
+                <div class="col-md-3 mb-4">
                     <div class="card">
-                        <img class="card-img-top" src="vista/img/<?php echo $destino['imagen']; ?>" alt="Card image cap">
+                        <!-- Imagen centrada y tamaño ajustado -->
+                        <img src="vista/img/<?= $valor['imagen'] ?>" 
+                            class="card-img-top mx-auto d-block" 
+                            style="width: 100%; height: 250px; object-fit: cover;" 
+                            alt="Imagen Paquete">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $destino['nombre']; ?></h5>
-                            <p class="card-text"><?php echo $destino['descripcion']; ?></p>
-                            <a href=""></a>
-                            <a class="btn btn-primary" href="index.php?p=paquetes">Ir a reservar ahora</a>
-                            
+                            <h5 class="card-title">Reserva #<?= $valor['id_reserva'] ?></h5>
+                            <p><strong>Nombre:</strong> <?= $valor['nombre'] . ' ' . $valor['apellido'] ?></p>
+                            <p><strong>Teléfono:</strong> <?= $valor['telefono'] ?></p>
+                            <p><strong>Paquete:</strong> <?= $valor['nombre_paquete'] ?></p>
+                            <p><strong>Precio:</strong> $<?= number_format($valor['precio'], 2, ',', '.') ?></p>
+                            <p><strong>Cantidad de Paquete:</strong> <?= $valor['cantidad_reservar'] ?></p>
+                            <p><strong>Total de Personas:</strong> <?= $valor['cantidad_reservar'] * $valor['num_personas'] ?></p>
+                            <p><strong>Total a Pagar:</strong> $<?= number_format($valor['precio'] * $valor['cantidad_reservar'], 2, ',', '.') ?></p>
+                            <p><strong>Fecha Reservada:</strong> <?= $valor['fecha_reserva'] ?></p>
+                            <p><strong>Fecha Inicio:</strong> <?= $valor['fecha_actividad'] ?></p>
+                            <p><strong>Hora de inicio:</strong> <?= date("g:i A", strtotime($valor['inicio_actividad'])) ?></p>
+                            <p><strong>Fecha Fin:</strong> <?= $valor['fecha_fin'] ?></p>
+                            <p><strong>Estado:</strong> <?= $valor['estado'] == 1 ? 'Confirmado' : 'No confirmado' ?></p>
                         </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
-        </div>
+                <?php
+                $contador++;
+            }
+        }
+        if ($contador > 0) echo '</div>'; // Cerrar la última fila
+        ?>
     </div>
-    <div id="ahora">
-        <div class="comienza">
-            <h1>Comienza ahora</h1>
-            <p>¡Únete a la aventura hoy!</p>
-            <div>
-                <form>
-                    <a href="https://mail.google.com/" class="btn btn-primary" style="background-color: #E6FFF5; color: black;"><u><i class="fa-brands fa-google"></i>  Inicia sesión con Google</u></a>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Correo electrónico</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu correo electrónico">
-                        <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo electrónico con nadie más.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Contraseña</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">ver contraseña</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="background-color: rgb(93, 177, 81);;">Iniciar sesión con correo electrónico</button>
-                </form>
-            </div>
-        </div>
-    </div>
+
+  
+        
+
+
+
+
 </article>
-
-
-<?php require_once("vista/layout/footer.php");
+<?php   
+require_once('vista/layout/footer.php');
 ?>
+
+

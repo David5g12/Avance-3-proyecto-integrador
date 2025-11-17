@@ -1,8 +1,6 @@
-
-
     
     <footer>
-        <hr style="border: 1px solid white;">
+        <hr   style="border: 2px solid white; margin-top: 3%;">
         <div class="foter">
             <div class="row g-0">
                 <!-- Primera columna -->

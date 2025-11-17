@@ -4,6 +4,7 @@
 }
 body{
     font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(3, 79, 94);
 }
 header{
     background-image: url(../img/banner.png);
@@ -152,6 +153,7 @@ footer{
     padding-top:5%;
     background-color:  rgb(3, 79, 94);
     color: white; 
+    
 }
 .foter{
     padding-top: 5%;
@@ -193,7 +195,7 @@ footer{
     
 }
 .card5{
-    background-color:rgb(26, 159, 182);
+    background-color: rgb(3, 79, 94);
     width: 55%;
     margin-left: 40%;
 }
@@ -201,5 +203,3 @@ footer{
     color: white;
     text-decoration: none;
 }
-
-

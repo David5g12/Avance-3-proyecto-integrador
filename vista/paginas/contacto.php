@@ -1,7 +1,8 @@
-
 <?php
-require_once('vista/layout/headerd.php');
+require_once("vista/layout/headercontacto.php")
+
 ?>
+
 <?php
 $permisos = []; // Array para almacenar los permisos obtenidos
 
@@ -22,7 +23,6 @@ $menusPermitidos = [];
 foreach ($permisos as $permiso) {
     $menusPermitidos[] = $permiso['menu'];
 }
-
 ?>
 
 <header>
@@ -61,7 +61,7 @@ foreach ($permisos as $permiso) {
                     <a class="nav-link" href="index.php?p=verMireserva">Ver mi reserva</a>
                 </li>
             <?php endif; ?>
-
+            
             <?php if (in_array("Más Opciones", $menusPermitidos)) : ?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="masOpciones" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -87,7 +87,6 @@ foreach ($permisos as $permiso) {
                 </li>
             <?php endif; ?>
 
-
             
             <li class="nav-item">
                 <a class="nav-link" href="index.php?p=login">Iniciar sesión</a>
@@ -101,93 +100,41 @@ foreach ($permisos as $permiso) {
     </div>
 </nav>
 
-<?php
-$destinos = []; // Array para almacenar los datos obtenidos
 
-foreach ($datosdestino as $key => $value) {
-    foreach ($value as $valor) {
-        // Guardar los datos en el arreglo $paquetes
-        $destinos[] = [
-            'id_destino' => $valor['id_destino'],
-            'nombre' => $valor['nombre_destino'],
-            'ubicacion' => $valor['ubicacion'],
-            'popularidad' => $valor['popularidad'],
-            'descripcion' => $valor['descripcion'],
-            'tipo' => $valor['tipo_destino'],
-            'imagen' => $valor['imagen'] // No es necesario construir la ruta aquí si solo quieres los valores
-        ];
-    }
-}
-
-?> 
-
-
-
-
-<div class="center-container">
-    
-    <div class="Vaije" style="background-color: white;">
-        <h1 style="font-size: 300%;"><b>ESTO ES CHIAPAS</b></h1>
-        <p style="font-size: 100%;">Rico de biodiversidad.</p> 
-    </div>
-    <div class="rosa">
-     <img src="vista/img/destino1.png" style="width: 50%; border-radius: 200px 200px 200px 200px;">
-
-    </div>
-</div>
-
-</header>
 
 <article>
-    <div id="beneficios">
-        <div class="row">
-            <div class="bviaje">
-                <h1 style="font-size: 350%;"><b>Las ciudades más populares de Chiapas.</b></h1>
-                <p style="font-size: 150%;"> Elige alguno de nuestros destinos.</p>
-            </div>
-            <?php foreach ($destinos as $destino): ?>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="card-img-top" src="vista/img/<?php echo $destino['imagen']; ?>" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $destino['nombre']; ?></h5>
-                            <p class="card-text"><?php echo $destino['descripcion']; ?></p>
-                            <a href=""></a>
-                            <a class="btn btn-primary" href="index.php?p=paquetes">Ir a reservar ahora</a>
-                            
+    <div class="container">
+        <h1>Contacto</h1>
+        <hr  style="border: 2px solid; pad">
+
+        <div class= "centrar">
+            <div class="row g-0 d-flex flex-column align-items-start" style="background-color:white;">
+                <div class="col">
+                    <div class="card4 mb-4">
+                        <div class="card-body" style="background-color:white;">
+                            <a href=""style="color:rgb(10, 122, 4);">Contactanos</a><br>
+                            <a href="" style="color:rgb(10, 122, 4);"><i class="fa-solid fa-envelope"></i>  equipo2@gmail.com</a><br>
+                            <a href="" style="color:rgb(10, 122, 4);"><i class="fa-solid fa-phone"></i>  961-450-33-55</a><br>
+                            <a href="" style="color:rgb(10, 122, 4);"><i class="fa-brands fa-whatsapp"></i>  961-155-49-88</a>
                         </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-    <div id="ahora">
-        <div class="comienza">
-            <h1>Comienza ahora</h1>
-            <p>¡Únete a la aventura hoy!</p>
-            <div>
-                <form>
-                    <a href="https://mail.google.com/" class="btn btn-primary" style="background-color: #E6FFF5; color: black;"><u><i class="fa-brands fa-google"></i>  Inicia sesión con Google</u></a>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Correo electrónico</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu correo electrónico">
-                        <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo electrónico con nadie más.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Contraseña</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">ver contraseña</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="background-color: rgb(93, 177, 81);;">Iniciar sesión con correo electrónico</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</article>
+                <div class="col">
+                    <div class="card4">
+                        <div class="card-body">
+                            <a href=""style="color:rgb(10, 122, 4);">siguenos en nuestras sociales</a><br>
+                            <a href=""style="color:rgb(10, 122, 4);"><i class="fa-brands fa-facebook"></i> facebook</a><br>
+                            <a href=""style="color:rgb(10, 122, 4);"><i class="fa-brands fa-twitter"></i> Twitter</a><br>
+                            <a href=""style="color:rgb(10, 122, 4);"><i class="fa-brands fa-youtube"></i></i> youtube</a>
 
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+</article>
 
 <?php require_once("vista/layout/footer.php");
 ?>
